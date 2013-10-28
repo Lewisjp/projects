@@ -1,0 +1,100 @@
+<!--
+This page cannot yet process data, this is a draft.
+This is based on my notes from Team Tree House HTML Basics 
+Feel free to email me your comments and suggestions at 
+Lewis.JP@gmail.com 
+Updated: 28OCT13
+-->
+<!doctype html> 
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Physical Fitness Test</title>
+</head>
+<body>
+	<h1>Physical Fitness Test</h1><br>
+
+<p>
+* This page is a draft.  It can't process data yet.
+</p>
+<!-- Practice creating forms -->
+
+<fieldset><legend>Personal Data</legend>
+<form action="Location_to_send_data.html" method="POST" name="my_form">
+<label for="First_Name">First Name</label>
+<input type="text" name="First_Name" id="First_Name"><br> 
+<label for="Last_Name">Last Name</label>
+<input type="text" name="Last_Name" id="Last_Name"><br> 
+<input type="radio" name="genera" value="Male">Male<br> 
+<input type="radio" name="genera" value="Female">Female<br><br>
+</fieldset>
+
+<fieldset><legend>Event Record</legend>
+<label for="Total_Push_ups">Total Push ups</label>
+<input type="text" name="Total_Push_ups" id="Total_Push_ups"><br>
+<label for="Total_Sit_ups">Total Sit ups</label>
+<input type="text" name="Total_Sit_ups"><br>
+<label for="Run_Time">Total Run time</label>
+<input type="text" name="Run_Time" id="Run_Time"><br>
+<label for="Run_d">Run Distance</label>
+	<select name="Run_d" id="Run_d">
+		<optgroup label="Miles">
+			<option>1 Mile</option>
+			<option>2 Miles</option>
+			<option>3 Miles</option>
+		</optgroup>
+		<optgroup label="Kilometers">
+			<option>1 K</option>
+			<option>5 K</option>
+			<option>10 K</option>
+		</optgroup>
+	</select>
+<br><label for="Extend_Score">Extended Score Scale?</label>
+<input type="checkbox" name="Score" value="Extend_Score" id="Extend_Score"><br>
+</fieldset>
+
+<fieldset><legend>Additional Considerations</legend><textarea name="essay" rows="5" cols="40"></textarea></fieldset><br><br>
+<input type="submit" value="TALLY"> <br>
+
+
+</form>
+
+
+
+<br><br><!-- Practice creating tables -->
+<table border="1" cellpadding="4" cellspacing="2">
+	<tr>
+		<thead>
+		<th>Exercise</th>
+		<th> Count/Time </th>
+		<th> Points </th>
+		</thead>
+			<tfoot>
+			<td colspan="2" align="right">Total Score: </td> 
+			</tfoot>
+			<tbody>
+	<tr>
+		<td>Push ups</td>
+		<td>Count</td>
+		<td>Points</td>
+	</tr>
+	<tr>
+		<td>Sit ips</td>
+		<td>Count</td>
+		<td>Points</td>
+	</tr>
+	<tr>
+		<td>Run</td>
+		<td>Time</td>
+		<td>Points</td>
+	</tr>
+			</tbody>
+
+</table>
+
+
+
+
+</body>
+</html>
