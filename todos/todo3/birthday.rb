@@ -12,21 +12,24 @@ push to your github repo and post link to this thread
 require 'time'
 require 'date'
 
-puts "We at the DMV need to know your birthday.\nPlease enter the following data\nYear: "
+puts "We at the DMV need to know your birthday.\nPlease enter the following data\nYear (yyyy): "
 user_year = gets.chomp.to_i
-puts "Month: "
+puts "Month (mm): "
 user_month = gets.chomp.to_i
-puts "Day: "
+puts "Day (dd): "
 user_day = gets.chomp.to_i
 
-today = Time.now
-Date.new(user_year, user_month, user_day)
+today_date = Time.now
+comp_month = today_date.month
+comp_day = today_date.day
 
-if today.month == date.month
-	if today.day == date.day
-		"Happy Birthday!"
+user_birthday = Date.new(user_year, user_month, user_day)
+
+if comp_month == user_birthday.month
+	if comp_day == user_birthday.day
+		puts "Happy Birthday!"
 	end
 else
-	"Now I know your birthday."
+		puts "Now I know your birthday."
 end
 
