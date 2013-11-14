@@ -5,7 +5,7 @@ The 'times_five' folder should contain a file called times_five.js and times_fiv
 =end
 
 
-for (var i = 0; i < 101; i = i * 5 ) {
+for (var i = 1; i < 101; i = i * 5 ) {
 
     console.log(i * 5);
 }
