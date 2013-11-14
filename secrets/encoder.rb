@@ -13,8 +13,6 @@ puts step_3
 step_4 = step_3.gsub!("c", "0a1")
 puts step_4
 
-
-
 =begin
 step_5 = step_4.gsub!("d", "0a0")
 puts step_5
