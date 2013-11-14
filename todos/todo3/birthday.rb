@@ -22,8 +22,8 @@ user_day = gets.chomp.to_i
 today = Time.now
 Date.new(user_year, user_month, user_day)
 
-if today.month == user_month
-	if today.day == user_day
+if today.month == date.month
+	if today.day == date.day
 		"Happy Birthday!"
 	end
 else
