@@ -1,0 +1,391 @@
+/********** Device Styles **********/
+
+
+/**
+ * Smartphone Landscape: 480px
+ */
+
+@media only screen and (max-width: 480px) {
+
+
+        .wrapper {
+                width: 80%;
+        }
+
+        h1 {
+        font-size: 1.0em;
+        text-align: center;        
+        }
+
+        h2 {
+        font-size: 0.8em;
+        text-align: center;        
+        }
+
+
+        .truth, .lie, .right, .wrong {
+        font-size: 1.0em;
+        padding: 0px 0px 0px 0px;
+        height: 80px;
+        vertical-align: left;
+        color: #333;
+        }
+
+        .container {
+        width: 310px;
+        min-height: 295px;
+        /*background-color: red;*/
+        padding-left: 5px;
+        margin-right: auto; 
+        margin-left: auto;
+        }
+
+
+
+        p.instructions  {
+        position: relative;
+        float: none;
+        clear: both;
+        text-align: center;
+        font-size: 1.0em;
+        font-weight: 700;
+        height: 85px;
+        line-height: 20pt;
+        padding-left: 0px;
+        }
+
+        .container-inner {        
+        width: 305px;
+        min-height: 285px;
+        /*background-color: red;*/
+        padding: 0px;
+        margin-right: auto; 
+        margin-left: auto;}
+
+
+		.sectiontitle, .title {
+        width: 300px;
+        min-height: 30px;
+        /*background-color: red;*/
+        padding: 0px;
+        margin-right: auto; 
+        margin-left: auto;
+        }
+
+
+		.row {
+        width: 300px;
+        min-height: 150px;
+        /*background-color: red;*/
+        padding: 0px;
+        margin-right: auto; 
+        margin-left: auto;
+        }
+
+        .resource {
+        width: 300px;
+        min-height: 30px;
+        /*background-color: red;*/
+        padding: 0px;
+        margin-right: auto; 
+        margin-left: auto;
+        }
+
+        .person, .items {
+        /*background-color: green;*/
+        border-style: solid;
+        position: relative;
+        float: none;
+        clear: both;
+        }
+
+
+        .name, {
+        width: 280px;
+        height: 60px;
+        /*background-color: grey;*/
+        float:none;
+        margin-left: 15px;
+        }
+
+		.question {
+        width: 260px;
+        height: 85px;
+        /*background-color: grey;*/
+        float:none;
+        margin-left: 15px;
+        }
+
+
+        .photo {
+        width: 200px;
+        height: 200px;
+        /*background-color: yellow;*/
+        overflow: hidden;
+        float:none;
+        margin: 5px 5px 5px 15px;
+        }
+
+
+        .details, .answers {
+        width: 290px;
+        height: 300px;
+        /*background-color: blue;*/
+        float:none;
+        margin: 5px 5px 5px 5px;
+        }
+
+
+        p.resource{
+        position: relative;
+        float: left;
+        clear: both;
+        text-align: left;
+        font-size: 1.0em;
+        font-weight: 700;
+        height: 50px;
+        line-height: 20pt;
+        padding-left: 18px;
+        
+        }
+
+        p.description{
+        text-align: left;
+        font-size: 1.0em;
+        line-height: 20pt;
+        height: 25px;
+        float:none;
+        font-weight: 300;
+        }        
+
+
+
+        #nav_bar {
+                width: 100%;
+                border-top: 0;
+                border-bottom: 1px solid #ccc;
+                text-align: center;
+                background: white;
+        }
+
+        #nav_bar .wrapper {
+                width: 90%;
+        }
+
+        #nav_bar nav {
+                border-left: 0;
+        }
+
+
+        #nav_bar nav a {
+                        display: block;
+                        width: 100%;
+                        margin: 0;
+                        padding: 0px 0;
+                        text-transform: uppercase;
+                        color: black;
+                        text-align: center;
+                        border-right: 1px solid #942290;
+                        text-decoration: none;
+                        font: 20px "Trebuchet MS", Arial, sans-serif;
+                        border: 1px solid #942290;
+
+        }
+
+
+}
+
+/**
+ * Smartphone Portrait: 320px
+ */
+
+@media only screen and (max-width: 320px) {
+
+        .wrapper {
+                width: 80%;
+        }
+
+        h1 {
+        font-size: 1.0em;
+        text-align: center;        
+        }
+
+        h2 {
+        font-size: 0.8em;
+        text-align: center;        
+        }
+
+
+        .truth, .lie, .right, .wrong {
+        font-size: 1.0em;
+        padding: 0px 0px 0px 0px;
+        height: 80px;
+        vertical-align: left;
+        color: #333;
+        }
+
+        .container {
+        width: 310px;
+        min-height: 295px;
+        /*background-color: red;*/
+        padding-left: 5px;
+        margin-right: auto; 
+        margin-left: auto;
+        }
+
+
+
+        p.instructions  {
+        position: relative;
+        float: none;
+        clear: both;
+        text-align: center;
+        font-size: 1.0em;
+        font-weight: 700;
+        height: 85px;
+        line-height: 20pt;
+        padding-left: 0px;
+        }
+
+        .container-inner {        
+        width: 305px;
+        min-height: 285px;
+        /*background-color: red;*/
+        padding: 0px;
+        margin-right: auto; 
+        margin-left: auto;}
+
+
+		.sectiontitle, .title {
+        width: 300px;
+        min-height: 30px;
+        /*background-color: red;*/
+        padding: 0px;
+        margin-right: auto; 
+        margin-left: auto;
+        }
+
+
+		.row {
+        width: 300px;
+        min-height: 200px;
+        /*background-color: red;*/
+        padding: 0px;
+        margin-right: auto; 
+        margin-left: auto;
+        }
+
+        .resource {
+        width: 300px;
+        min-height: 60px;
+        /*background-color: red;*/
+        padding: 0px;
+        margin-right: auto; 
+        margin-left: auto;
+        }
+
+        .person, .items {
+        /*background-color: green;*/
+        border-style: solid;
+        position: relative;
+        float: none;
+        clear: both;
+        }
+
+
+        .name, {
+        width: 280px;
+        height: 60px;
+        /*background-color: grey;*/
+        float:none;
+        margin-left: 15px;
+        }
+
+		.question {
+        width: 260px;
+        height: 85px;
+        /*background-color: grey;*/
+        float:none;
+        margin-left: 15px;
+        }
+
+
+        .photo {
+        width: 200px;
+        height: 200px;
+        /*background-color: yellow;*/
+        overflow: hidden;
+        float:none;
+        margin: 5px 5px 5px 15px;
+        }
+
+
+        .details, .answers {
+        width: 290px;
+        height: 300px;
+        /*background-color: blue;*/
+        float:none;
+        margin: 5px 5px 5px 5px;
+        }
+
+
+        p.resource{
+        position: relative;
+        float: left;
+        clear: both;
+        text-align: left;
+        font-size: 1.0em;
+        font-weight: 700;
+        height: 50px;
+        line-height: 20pt;
+        padding-left: 18px;
+        
+        }
+
+        p.description{
+        text-align: left;
+        font-size: 1.0em;
+        line-height: 20pt;
+        height: 50px;
+        float:none;
+        font-weight: 300;
+        }        
+
+
+
+        #nav_bar {
+                width: 100%;
+                border-top: 0;
+                border-bottom: 1px solid #ccc;
+                text-align: center;
+                background: white;
+        }
+
+
+
+        #nav_bar .wrapper {
+                width: 90%;
+        }
+
+        #nav_bar nav {
+                border-left: 0;
+        }
+
+
+        #nav_bar nav a {
+                        display: block;
+                        width: 100%;
+                        margin: 0;
+                        padding: 0px 0;
+                        text-transform: uppercase;
+                        color: black;
+                        text-align: center;
+                        border-right: 1px solid #942290;
+                        text-decoration: none;
+                        font: 20px "Trebuchet MS", Arial, sans-serif;
+                        border: 1px solid #942290;
+
+        }
+
+
+}

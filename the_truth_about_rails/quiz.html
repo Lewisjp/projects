@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>The Truth About Rails</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="normalize.css">
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link rel="stylesheet" type="text/css" href="device_styles.css">
+		<!-- Responsive website: Use alt .css for mobile devices. This disables mobile zoom, so they keep our defaults --> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+
+		
+	</head>
+	<body>
+		
+		<header>
+			<h1>THE TRUTH ABOUT RAILS</h1>
+
+			<div id="nav_bar">
+				<nav>
+					<a href="index.html">About Us</a>
+					<a href="resources.html">Rails Resources</a>
+					<a class="selected" href="quiz.html">Rails Quiz</a>
+				</nav>				
+			</div>
+			
+			
+
+		</header>
+		
+		<p class="instructions">Hover over an item to see if it's a truth or lie.<br>The truths will highlight in green, and the lies will be red.</p>
+		<div class="container">
+			
+			<div class ="items">
+				<div class="question">Rails is:</div>
+				<div class="answers">
+					<div class="right">A framework for Ruby.</div>
+					<div class="wrong">A programming language.</div>
+					<div class="right">Open-source.</div>
+				</div>
+			</div>
+			<div class ="items">
+				<div class="question">If you run $ rails generate scaffold User:</div>
+				<div class="answers">
+					<div class="right">A Users controller is generated.</div>
+					<div class="right">A user model is generated.</div>
+					<div class="wrong">A user is created.</div>
+				</div>
+			</div>
+			<div class="items">
+				<div class="question">Which is the incorrect syntax?</div>
+				<div class="answers">
+					<div class="wrong">flatiron = Variable.created(:status => "Love to code", :location => "New York")</div>
+					<div class="right">flatiron = Variable.new(:status => "Love to code", :location => "New York")</div>
+					<div class="right">flatiron = Variable.create(:status => "Love to code", :location => "New York")
+</div>
+				</div>
+			</div>
+			<div class="items">
+				<div class="question">What do you do when you add a gem to your app?</div>
+				<div class="answers">
+					<div class="right">Add it to Gemfile.rb.</div>
+					<div class="wrong">Go to Tiffany's.</div>
+					<div class="right">Run $bundle install.</div>
+				</div>
+			</div>
+			<div class="items">
+				<div class="question">All Rails apps include:</div>
+				<div class="answers">
+					<div class="right">A README.rdoc file.</div>
+					<div class="wrong">A checkout directory for git logs.</div>
+					<div class="right">A doc directory for documentation.</div>
+				</div>
+			</div>
+			<div class="items">
+				<div class="question">The parts of the MVC Model include:</div>
+				<div class="answers">
+					<div class="wrong">Multiple and View</div>
+					<div class="right">View and Controller</div>
+					<div class="right">Controller and Model</div>
+				</div>
+			</div>
+			<div class="items">
+				<div class="question">These are valid rails commands:</div>
+				<div class="answers">
+					<div class="right">gem update # Updates all Ruby Gems. </div>
+					<div class="right">rake db:migrate # Runs all migrations to bring the database up to date.</div>
+					<div class="wrong">gem update miner drill # Increase speed of Gems.</div>
+				</div>
+			</div>
+			<div class="items">
+				<div class="question">Rails Migrations:</div>
+				<div class="answers">
+					<div class="right">are a convenient way to alter your database schema over time in a consistent and easy way. </div>
+					<div class="wrong">don'thave a Ruby DSL, so you have to write out SQL.</div>
+					<div class="right">are stored as files in the db/migrate directory, one for each migration class.</div>
+				</div>
+			</div>
+			<div class="items">
+				<div class="question">These are possible validations you can use in Rails:</div>
+				<div class="answers">
+					<div class="wrong">validates_association_of </div>
+					<div class="right">validates_inclusion_of</div>
+					<div class="right">validates_uniqueness_of</div>
+				</div>
+			</div>				
+		</div>
+
+		<div class="button-container">
+			<button class="next"> NEXT</button>
+		</div>
+	</body>
+</html>
+
+<script>
+	var random = Math.floor(Math.random() * $('.items').length);
+	$('.items').hide().eq(random).show();
+	$('.next').click(function(){
+		location.reload();
+	})
+</script>

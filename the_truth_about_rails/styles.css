@@ -1,0 +1,271 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	padding-top: 40px; /*Added for Nav Bar*/
+	background-color: #F7F7F7; /* very light gray */
+
+}
+
+header {
+	margin-bottom: 40px;
+}
+
+/* TEXT STYLES */
+
+
+h1, h2, p {
+	text-align: center;	
+}
+
+h1 {
+	font-size: 40px;
+	font-weight: 400;
+}
+
+.name {
+	font-size: 18pt;
+}
+
+.truth, .lie {
+font-size: 16pt;
+padding: 10px 12px 0px 15px;
+height: 90px;
+vertical-align: middle;
+color: #333;
+}
+
+.lie:hover, .wrong:hover {
+	background-color: #F75C5C; /* RED */
+}
+
+.right, .wrong {
+font-size: 16pt;
+padding: 10px 50px;
+vertical-align: middle;
+color: #333;
+}
+
+.right:hover, .truth:hover {
+	background-color: #74CC64; /* GREEN */
+}
+
+.instructions {
+	margin-bottom: 0;
+}
+
+/* LAYOUT */
+.container {
+width: 80%;
+/*min-height: 1550px;*/
+/*background-color: red;*/
+padding: 0;
+border: 3px solid #EBEBEB;
+/*margin-right: auto; 
+margin-left: auto;
+margin-top: 50px;*/
+margin: 20px auto;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+.clearfix {
+    display: inline-block;
+}
+
+.person {
+	background-color: white;
+	background-color: white;
+	border-bottom-style: solid;
+	border-bottom-width: 4px;
+	border-bottom-color: #F7F7F7; /* very light gray */
+	position: relative;
+	float: left;
+	clear: both;
+}
+
+.name {
+	width: 840px;
+	height: 30px;
+	/*background-color: grey;*/
+	float:left;
+	margin-left: 15px;
+	
+
+}
+.photo {
+	width: 300px;
+	height: 300px;
+	/*background-color: yellow;*/
+	overflow: hidden;
+	float:left;
+	margin: 5px 15px 15px 15px;
+}
+
+img {
+	max-width: 100%;
+}
+
+.details {
+	width: 510px;
+	height: 300px;
+	/*background-color: blue;*/
+	float:left;
+	margin: 5px 15px 15px 15px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	display: inline;
+}
+
+.items {
+	background-color: white;
+	/*border-bottom-style: solid;
+	border-bottom-width: 4px;
+	border-bottom-color: #F7F7F7; /* very light gray */
+	position: relative;
+	padding: 5px;
+}
+
+.question {
+	/*background-color: orange;*/
+	padding: 10px;
+	font-size: 1.75em;
+}
+
+.answers {
+	/*background-color: blue;*/
+	padding: 10px 0;
+}
+
+.button-container {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+button.next {
+	background-color: #F59E07; /* ORANGE */
+	border: none;
+	width: 100px;
+	height: 40px;
+	
+	color: white;
+	font-weight: 500;
+	font-size: 18px;
+
+}
+
+/*Nav bar*/
+#nav_bar {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+	}
+
+	#nav_bar nav {
+		border-left: 3px solid white;
+		
+	}
+
+	#nav_bar nav a {
+			display: inline-block;
+			width: 20%;
+			margin: 0;
+			padding: 22px 0;
+			text-transform: uppercase;
+			color: black;
+			text-align: center;
+			border-right: 3px solid white;
+			text-decoration: none;
+			font-size: 20px;
+			border: 3px solid white;
+			background-color: white;
+
+	}
+
+	#nav_bar nav a.selected {
+			background: #F59E07;
+			color: white;
+			border-color: #F59E07;
+	}
+
+
+#nav_bar nav a:hover {
+	background: #942290;
+	color: white;
+	border-color: #942290;
+}
+
+/* RESOURCES PAGE */
+
+
+.row {
+	position: relative;
+	/*float: left;
+	clear: both;*/
+	height: 60px;
+	width: 95%;
+	/*padding-top: 18px;
+	padding-bottom: 18px;*/
+	padding-left: 5%;
+	padding-top: 30px;
+	padding-bottom: 15px;
+	background-color: white;
+	border-bottom-style: solid;
+	border-bottom-width: 4px;
+	border-bottom-color: #F7F7F7; /* very light gray */
+}
+
+
+
+.row:hover{
+	background-color: #F7F7F7; /* very light gray */
+	
+}
+
+.row p {
+	display: inline;
+	font-size: 16pt;
+} 
+
+.row a:visited, a:active, a:hover, a:-webkit-any-link {
+	text-decoration: none;
+	color: black;
+}
+
+p.resource, p.title {
+	font-weight: 700;
+	margin-top:0px;
+	font-size: 16pt;
+
+}
+
+.sectiontitle {
+	position: relative;
+	/*float: left;
+	clear: both;*/
+	height: 35px;
+	width: 100%;
+	padding: 3px 0px 3px 0px;
+	background-color:  #F59E07; /* ORANGE */
+}
+
+
