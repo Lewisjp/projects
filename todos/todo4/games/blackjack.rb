@@ -136,7 +136,6 @@ end
 
 def hit_or_stand(total_hand, total_dealer, player, hits, deck)
 
-	if hits != 2
 	puts "Would you like to Hit or Stand?"
 	answer2 = gets.chomp.downcase
 		case answer2 
@@ -151,9 +150,6 @@ def hit_or_stand(total_hand, total_dealer, player, hits, deck)
 			puts "I didn't understand you."
 			hit_or_stand(total_hand, total_dealer, true, hits, deck)
 		end
-	end
-
-
 
 end
 
