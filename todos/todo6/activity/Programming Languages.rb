@@ -47,7 +47,12 @@ reorg_languages = Hash.new
          reorg_languages[attribute] = {}
       end
 
-      reorg_languages[attribute][:style] = Array.new
+      # This checks to see if there is already an item for :style
+      # if .nil? = true, it creates the new array
+      # otherwise it goes directly into adding the second key
+      if reorg_languages[attribute][:style].nil?
+        reorg_languages[attribute][:style] = Array.new
+      end
 
       reorg_languages[attribute][:style] << key
     
