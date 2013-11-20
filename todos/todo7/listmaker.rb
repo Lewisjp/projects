@@ -16,7 +16,7 @@ def make_list(arr)
 		bed_index = arr.index(bear)
 		arr[bed_index] = "#{bed_index +1 }. " + bear
 	end
-	puts arr
+	arr
 end
 
 test = ["Baby bear", "Papa bear", "Mother bear"]

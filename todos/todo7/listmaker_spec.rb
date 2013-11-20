@@ -3,15 +3,19 @@ require './listmaker'
 
 describe "#make_list" do 
 
-	it "returns string" do
-		expect(make_list).to be_a_kind_of(String)
+	it "returns array" do
+		expect(make_list(["gold", "silver", "copper"])).to be_a(Array)
     end
 
-
-	it "returns string" do
-		expect(make_list).to_not be_a_kind_of(Numeric)
+    it "should return a numbered array" do
+    	expect(make_list(["gold", "silver", "copper"])).to eql(["1. gold", "2. silver", "3. copper"])
     end
 
+=begin
+	it "does not return a numeric " do
+		expect(make_list(["gold", "silver", "copper"]).to_not be_a_kind_of(Numeric)
+    end
+=end
 
 end
 
