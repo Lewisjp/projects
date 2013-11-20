@@ -14,9 +14,9 @@ def make_list(arr)
 	arr.each do |bear|
 
 		bed_index = arr.index(bear)
-		arr[bed_index] = "#{bed_index}. " + bear
+		arr[bed_index] = "#{bed_index +1 }. " + bear
 	end
-	arr.to_s
+	puts arr
 end
 
 test = ["Baby bear", "Papa bear", "Mother bear"]
