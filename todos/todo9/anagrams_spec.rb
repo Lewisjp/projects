@@ -29,12 +29,12 @@ describe 'Anagram' do
 
   it 'should detect 1 matche' do
     detector = Anagram.new('elvis')
-    detector.match(%w(lives)).should eq([lives])
+    detector.match(%w(lives)).should eq(["lives"])
   end
 
   it 'should detect 1' do
     detector = Anagram.new('stark')
-    detector.match(%w(karts)).should eq([karts])
+    detector.match(%w(karts)).should eq(["karts"])
   end  
 
   it 'should detect no matches' do
