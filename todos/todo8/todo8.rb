@@ -9,14 +9,11 @@ class Deli
 #In our deli, we should be able to call "take a number" that takes a customer's name, appends their number to their name and adds them to the line.
 	def take_a_number(name)
 
-		if @line[0] == nil
-			@line << "1. " + name
-		else 
-			@line << "#{self.length + 1}. " + name
-		end
-
+		place = line.length
+		line << "#{place + 1}. " + name
+		
 # The line could look like this: ["1. Ashley", "2. Steve", "3. Blake"] 
-		@line
+		line
 	end
 
 
@@ -33,8 +30,11 @@ class Deli
 
 end
 
-
-
+our_line = Deli.new
+our_line.take_a_number("Tony")
+our_line.take_a_number("Ralph Cifaretto")
+our_line.take_a_number("Silvio Dante")
+puts our_line.now_serving
 
 
 
