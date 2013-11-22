@@ -26,7 +26,7 @@ class Anagram
       end
     end
 
-    words_found
+    words_found.uniq
   end
 
   def display(word, words_found)
@@ -42,15 +42,15 @@ class Anagram
 end
 
 
-word = 'ba'
-answers = ['ab', 'abc', 'bac']
+word = 'allergy'
+answers = %w(gallery ballerina regally clergy largely leading)
 
 detector = Anagram.new(word)
-detector.match(answers)
+puts detector.match(answers).inspect
 
-# This worked
+
 # detector = Anagram.new('ba')
-# detector.match(['ab', 'abc', 'bac'])
+# puts detector.match(['ab', 'abc', 'bac'])
 
 =begin
   it 'should detect a simple anagram' do
