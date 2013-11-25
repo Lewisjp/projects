@@ -53,7 +53,7 @@ class SecretHandshake
       gestures.reverse!
     end
 
-    puts gestures
+    gestures
 
   end
 
