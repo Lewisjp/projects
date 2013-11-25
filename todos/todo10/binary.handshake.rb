@@ -59,8 +59,6 @@ class SecretHandshake
 
 end
 
-handshake = SecretHandshake.new("11111")
-handshake.commands
 
 =begin
 
