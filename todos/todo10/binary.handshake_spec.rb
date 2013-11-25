@@ -1,3 +1,4 @@
+require './binary.handshake'
 # # Binary Secret Handshake
 
 # > There are 10 types of people in the world: Those who understand binary, and those who don't.
@@ -24,45 +25,6 @@
 # handshake = SecretHandshake.new "11001"
 # handshake.commands # => ["jump","wink"]
 # ```
-
-
-class SecretHandshake
-
-  attr_accessor :num
-
-  def initialize(num)
-    @num = num.to_s
-
-  end
-
-  def commands
-    gestures = Array.new
-    if num[-1] == "1"
-      gestures << "wink"
-    end
-    if num[-2] == "1"
-      gestures << "double blink"
-    end
-    if num[-3] == "1"
-      gestures << "close your eyes"
-    end
-    if num[-4] == "1"
-      gestures << "jump"
-    end
-    if num[-5] == "1"
-      gestures.reverse!
-    end
-
-    puts gestures
-
-  end
-
-end
-
-handshake = SecretHandshake.new("11111")
-handshake.commands
-
-=begin
 
 # The program should consider strings specifying an invalid binary as the value 0.
 
@@ -118,5 +80,3 @@ describe 'SecretHandshake' do
     handshake.commands.should eq([])
   end
 end
-
-=end
