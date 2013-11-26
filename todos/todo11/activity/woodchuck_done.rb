@@ -45,13 +45,9 @@ numbered_woodchuck = 0
 puts "Each Woodchuck chucke the following amount of wood:"
 Woodchuck::WOODCHUCKS.each do |woodchuck|
   numbered_woodchuck += 1
-  puts "Woodchuck #{numbered_woodchuck} chucked #{woodchuck.chuck_count} of wood."
+  puts "Woodchuck #{numbered_woodchuck} chucked #{woodchuck.chuck_count} pounds of wood."
   total_chucked += woodchuck.chuck_count
 end
 
-
-
-puts "\n\n"
-puts Woodchuck::WOODCHUCKS.inspect
-puts "\n\nThere are #{Woodchuck.woodchuck_count} Woodchucks."
-puts "Who chucked #{total_chucked} wood."
+# puts Woodchuck::WOODCHUCKS.inspect
+puts "\n\n#{Woodchuck.woodchuck_count} Woodchucks chucked #{total_chucked} pounds of wood."
