@@ -12,12 +12,6 @@ Write a method that will take a tweet, search it for words that you can substitu
 "at" becomes "@" 
 "and" becomes "&"
 ```
- 
-**Objectives**
-
-1. Modify your program to only do the substitutions if the tweet is longer than 140 characters
-
-Things are going great, but you're noticing that some tweets are too long still, even after substituting shorter words. Being the conscientious developer that you are, you talk to the client about this scenario and decide together that the best thing to do is just truncate the string to 140 characters if it's still too long after you do the substitution.
 
 **Objectives**
 
@@ -25,22 +19,29 @@ Things are going great, but you're noticing that some tweets are too long still,
 =end
 
 # 1. Write a method to shorten a string based on the allowed substitutes
+# 1. Modify your program to only do the substitutions if the tweet is longer than 140 characters
 def twitterfy(message)
 	answer = Array.new
 	check_words = message.split(" ")
-	check_words.each do |word|
-		word.gsub! "to", "2"
-		word.gsub! "two", "2"
-		word.gsub! "too", "2"
-		word.gsub! "for", "4"
-		word.gsub! "four", "4"
-		word.gsub! "be", "b"
-		word.gsub! "you", "u"
-		word.gsub! "at", "@"
-		word.gsub! "and", "&"
-		answer << word
+	if message.length > 140
+		check_words.each do |word|
+			word.gsub! "to", "2"
+			word.gsub! "two", "2"
+			word.gsub! "too", "2"
+			word.gsub! "for", "4"
+			word.gsub! "four", "4"
+			word.gsub! "be", "b"
+			word.gsub! "you", "u"
+			word.gsub! "at", "@"
+			word.gsub! "and", "&"
+			answer << word
+		end
 	end
-	answer.join(" ").inspect
+	answer = answer.join(" ")
+	# you talk to the client about this scenario and decide together that the best thing to do is just truncate the string to 140 characters if it's still too long after you do the substitution.
+	if answer.length > 140
+		answer.slice!(0..140)
+	end
 end
 
 # test =  "Hey guys, can anyone teach me how to be cool? I really want to be the best at everything, you know what I mean? Tweeting is super fun you guys!!!!"
@@ -99,6 +100,7 @@ tweet2 = "OMG you guys, you won't believe how sweet my kitten is. My kitten is l
 tweet3 = "I'm running out of example tweets for you guys, which is weird, because I'm a writer and this is just writing and I tweet all day. For real, you guys. For real."
 #160 characters
 
+
 tweet4 = "GUISEEEEE this is so fun! I'm tweeting for you guys and this tweet is SOOOO long it's gonna be way more than you would think twitter can handle, so shorten it up you know what I mean? I just can never tell how long to keep typing!"
 #230 characters
 
@@ -106,7 +108,7 @@ tweets = Array.new
 tweets << tweet1 << tweet2 << tweet3 << tweet4 
 
 
-puts shorten_long_tweets(tweets)
+#puts shorten_long_tweets(tweets)
 
 
 
