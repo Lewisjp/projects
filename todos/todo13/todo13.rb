@@ -30,21 +30,64 @@
 
 
 class Array
-  def version_sort
-    answer = Array.new
-    sorter = Hash.new
-    version = /\d+/
-#   version = /\d+\D\d*/
-    self.each do |item|
-      num = item.match(version)
-      sorter[item] = num.to_s.to_f
-    end
-    sorter.values.sort
-    sorter.each do |key, value|
-      answer << key
-    end
-    puts answer
+
+  def sort_please(var_arr) 
+
+    changed = true
+      while changed == true
+      changed = false
+      (var_arr.count-1).times do |x| 
+        if var_arr[x][1].to_i < var_arr[x+1][1].to_i
+          var_arr[x] <=> var_arr[x+1]
+          changed = true
+        end
+      end
+      end
+
   end
+
+
+
+  def version_sort
+    var_arr = Array.new
+
+    version = /.\d+\D\d*\D*/ # => -2.012b.ext #.\d+\D\d* "foo-1.9.3.ext" => -1.9.3.
+
+    self.each do |item|
+      temp = Array.new
+      temp << item # nested array will start with original variable
+
+      num = item.match(version) # class type => MatchData
+      num = num.to_s.delete("-").delete("ext")
+      num = num.split(".").unshift(item) # => ["foo-2.012b.ext", "2", "012b"]
+
+      var_arr << num # nest array for future sorting 
+    end
+
+      # var_arr[0][0] #=> foo-1.10.2.ext
+      sort_please(var_arr)
+  end
+
+
+
+  # def version_sort
+  #       # My understanding is that the order of "foo-2.01.ext" and "foo-2.1.ext" is not specified.
+  #   # If so, the assert_equal test should be modified accordingly.
+
+  #   def to_array(s)
+  #     a = s.scan(/(\d+)([a-z]*)/).flatten 
+  #     a.each_with_index.map {|e,i| i.even? ? e.to_i : e!="" ? e : i==a.length-1 ? (?a.ord-1).chr : (?z.ord+1).chr}
+  #   end
+
+  #   return self.sort do |a,b|
+  #     am, bm = to_array(a), to_array(b)
+  #     len = [am.length, bm.length].min
+  #     cmp = 0
+  #     am[0,len].zip(bm[0,len]).each {|pair| break if (cmp = (pair.first<=>pair.last)) != 0}
+  #     cmp
+  #   end
+  # end
+
 end
 
 filenames = [
@@ -98,5 +141,5 @@ version_sorted_filenames = [
   "foo-100.ext",
 ]
 
-puts filenames.version_sort
+filenames.version_sort
 
