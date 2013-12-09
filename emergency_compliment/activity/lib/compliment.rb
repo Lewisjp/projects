@@ -20,12 +20,12 @@ class Compliment
 
 	def image_random
 		image_arr = [
-			"http://community.sephora.com/t5/image/serverpage/imageid/23915i78B7085006C4239D/image-size/original?v=mpbl-1&px=-1", 
-			"http://images.fineartamerica.com/images-medium-large-5/ethiopean-mother-and-child-nancy-watson.jpg", 
-			"http://autolimosales.com/images/Old%20Antique%20Cars%20for%20Sale.jpg",
-			"http://st.houzz.com/simgs/5521503b0ee90f57_4-5007/contemporary-artwork.jpg", 
-			"http://www.thehouseofmarley.com/blog/wp-content/uploads/2012/11/bob-marley-artwork-4.jpg",
-			"http://www.aivault.com/wp-content/uploads/2008/02/artwork1.jpg"
+			"'http://community.sephora.com/t5/image/serverpage/imageid/23915i78B7085006C4239D/image-size/original?v=mpbl-1&px=-1'", 
+			"'http://images.fineartamerica.com/images-medium-large-5/ethiopean-mother-and-child-nancy-watson.jpg'", 
+			"'http://autolimosales.com/images/Old%20Antique%20Cars%20for%20Sale.jpg'",
+			"'http://st.houzz.com/simgs/5521503b0ee90f57_4-5007/contemporary-artwork.jpg'", 
+			"'http://www.thehouseofmarley.com/blog/wp-content/uploads/2012/11/bob-marley-artwork-4.jpg'",
+			"'http://www.aivault.com/wp-content/uploads/2008/02/artwork1.jpg'"
 		]
 		image_return = image_arr[rand(6)]
 	end
