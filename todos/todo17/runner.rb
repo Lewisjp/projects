@@ -1,15 +1,15 @@
 require_relative './jukebox.rb'
 
 def run
-  puts "Welcome to Ruby Console Jukebox!"
-#  while command.downcase(command) != "exit" do
-    puts "Enter a command to continue. Type 'help' for a list of commands."
-    command = get_command  
-    run_command(command) unless command.downcase == "exit"
-#  end
+  puts "\nWelcome to Ruby Console Jukebox!"
+  puts "Enter a command to continue. Type 'help' for a list of commands."
+  input = get_command  
+  if input.downcase != "exit"
+    run_command(input) unless input.downcase == "exit"
+  end
 end
 
-def get_command  #called on line 7
+def get_command  
   gets.strip
 end
 
