@@ -1,0 +1,26 @@
+CREATE TABLE users 
+(
+	user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	user TEXT
+);
+
+CREATE TABLE quiz(
+	quiz_id INTEGER PRIMARY KEY AUTO_INCREMENT, 
+	quiz TEXT
+);
+
+CREATE TABLE question(
+	question_id INTEGER PRIMARY KEY AUTO_INCREMENT, 
+	question TEXT
+);
+
+CREATE TABLE choices(
+	choices_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	content TEXT,
+	correct BOOL	
+);
+
+CREATE TABLE answers(
+	answer_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	answer TEXT
+);

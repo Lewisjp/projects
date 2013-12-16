@@ -1,0 +1,134 @@
+### 1. schema.sql 
+
+CREATE TABLE user
+(
+	user_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	user TEXT
+);
+
+CREATE TABLE quiz(
+	quiz_id INTEGER PRIMARY KEY AUTO_INCREMENT, 
+	quiz TEXT
+);
+
+CREATE TABLE question(
+	question_id INTEGER PRIMARY KEY AUTO_INCREMENT, 
+	question TEXT
+);
+
+CREATE TABLE choices(
+	choices_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	content TEXT,
+	correct BOOL	
+);
+
+CREATE TABLE answers(
+	answer_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	answer TEXT
+);
+
+
+### 2. insert.sql
+
+Write an insert.sql file to create the following data:
+
+  - There should be 3 users.
+INSERT INTO user(user) values('Jeremy')
+INSERT INTO user(user) values('Tessa')
+INSERT INTO user(user) values('Keturah')
+
+  - There should be 2 quizzes.
+
+INSERT INTO quiz(quiz) values('New_York')
+INSERT INTO quiz(quiz) values('Connecticut')
+
+  - Each quiz has 5 questions.
+
+INSERT INTO question(question) values('What is the state capital?')
+INSERT INTO question(question) values('What is the largest city in the state?')
+INSERT INTO question(question) values('What is the state abbreviation?')
+INSERT INTO question(question) values('What is the state bird?')
+INSERT INTO question(question) values('What is the state motto?')
+
+  - Each question has 4 answers. 
+  - 3 are wrong
+  - 12 total 
+
+largest city
+	INSERT INTO answers(answer) values('Westport')
+	INSERT INTO answers(answer) values('Greenwich')
+	INSERT INTO answers(answer) values('Darien')
+	INSERT INTO answers(answer,`correct`) values('New York City', TRUE)
+	INSERT INTO answers(answer,`correct`) values('Bridgeport', TRUE)
+
+capital
+	INSERT INTO answers(answer) values('New Haven')
+	INSERT INTO answers(answer) values('East Haven')
+	INSERT INTO answers(answer) values('Branford')
+	INSERT INTO answers(answer,`correct`) values('Albany', TRUE)
+	INSERT INTO answers(answer,`correct`) values('Hartford', TRUE)
+
+abbreviation
+	INSERT INTO answers(answer) values('AZ')
+	INSERT INTO answers(answer) values('MO')
+	INSERT INTO answers(answer) values('CA')
+	INSERT INTO answers(answer,`correct`) values('NY', TRUE)
+	INSERT INTO answers(answer,`correct`) values('CT', TRUE)
+
+bird
+	INSERT INTO answers(answer) values('Mockingbird')
+	INSERT INTO answers(answer) values('Chicken')
+	INSERT INTO answers(answer) values('Cardinal')
+	INSERT INTO answers(answer,`correct`) values('Bluejay', TRUE)
+	INSERT INTO answers(answer,`correct`) values('Robin', TRUE) # CT
+
+motto
+	INSERT INTO answers(answer) values('Gold and silver')
+	INSERT INTO answers(answer) values('She flies with her own wings')
+	INSERT INTO answers(answer) values('While I breathe, I hope
+Ready in soul and resource')
+	INSERT INTO answers(answer,`correct`) values('Ever upward', TRUE)
+	INSERT INTO answers(answer,`correct`) values('He who transplanted sustains', TRUE)
+
+Updates: 
+
+	ALTER TABLE answers
+	ADD correct BOOL
+
+	UPDATE answers
+	SET correct=FALSE
+	WHERE correct=NULL
+
+
+	- answers for the questions
+
+	Create 2 sets, one for NY and CT
+
+	ALTER TABLE question
+	ADD state TEXT
+
+	UPDATE question
+	SET state="NY"
+
+	INSERT INTO question(question, state) values('What is the state capital?', 'CT')
+	INSERT INTO question(question, state) values('What is the largest city in the state?', 'CT')
+	INSERT INTO question(question, state) values('What is the state abbreviation?', 'CT')
+	INSERT INTO question(question, state) values('What is the state bird?', 'CT')
+	INSERT INTO question(question, state) values('What is the state motto?', 'CT')
+
+### 3. update.sql
+
+Write an update.sql that will update user with id 1's name.
+
+	UPDATE user
+	SET user="Daffy duck"
+	WHERE user_id=1
+
+
+### 4. quiz.sql
+
+From MySQL 5.6.13,
+	File >> Export 
+	quiz.sql was saved in this folder that displays all questions in a quiz.
+
+
