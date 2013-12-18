@@ -3,136 +3,108 @@ require 'debugger'
 
 class Dog
   
-  attr_accessor :db, :name, :color
+  attr_accessor :id, :name, :color
 
-  @@db = Mysql2::Client.new(:host => "localhost", :username => "root", :database => "dogs")
+  @@client = Mysql2::Client.new(:host => "localhost", :username => "root", :database => "dogs")
 
-  # color, dog_name, dog_id #=> :database dogs set up 
-  def initialize(name, color)
-    @name = name
-    @color = color
-
- #  new_table  #=> Table 'dogs.dogs' doesn't exist (Mysql2::Error)
+  def initialize(name = "Bob Barker", color = "blue")
+    @name = name 
+    @color = color 
   end
+
+
+  def self.db
+    @@client
+  end
+
+  def db 
+    @@client
+  end
+
+  def find_all
+    results = db.query("
+      SELECT *
+      FROM dogs
+      ")
+      print(results)
+  end
+
+  # Find dog by ID 
+  def find(dog_id)
+    results = db.query("
+      SELECT *
+      FROM dogs
+      WHERE dog_id=#{dog_id}
+      ")
+  end
+
+  # Find dog by name
+  def find_by_name(d_name)
+    results = db.query("
+      SELECT *
+      FROM dogs
+      WHERE dog_name=#{d_name}
+      ")
+  end
+
+
+  def find_by_attr(field_1, field_2)
+    results = db.query("
+      SELECT *
+      FROM dogs
+      WHERE #{field_1}=#{field_2}
+      ")
+  end
+
 
   def mark_saved!
     self.id = self.db.last_id if self.db.last_id > 0
   end
 
-  # Create table
-  def new_table
-    db.query("
-      CREATE TABLE dogs(
-        dog_id INTEGER PRIMARY KEY AUTO_INCREMENT,
-        dog_name TEXT,
-        color TEXT
-      );
-    ")
-  end
-
-  # db
-  def self.db
-    @@db
-  end
-
-  # db
-  def db
-    @@db
-  end
 
 
-
-  # def self.new_from_db(row)
-  #   dog = Dog.new(row["name"], row["color"]) #=> undefined method `[]' for nil:NilClass (NoMethodError)
-  #   dog
-  # end
-
-
-  # find_by_att , for now its just Color 
-  def self.find_by_att(d_color)
-    result = db.query("
-      SELECT *
-      FROM dogs
-      WHERE color='#{d_color}'
-    ")
-  end
-
-  # find_by_if
-  def self.find(d_id)
-    result = db.query("
-      SELECT *
-      FROM dogs
-      WHERE dog_id=#{d_id}
-    ")
-    # self.new_from_db(result.first)
-  end
-
-  # find by name 
-  def self.find_by_name(name)
-    result = self.db.query("
-      SELECT *
-      FROM dogs
-      where name = '#{name}'
-    ")
 
     # self.new_from_db(result.first)
-  end
 
 
 
   # insert
-  def self.insert(d_color, dog_name)
-    self.db.query("
-      INSERT INTO dogs(color, dog_name) VALUES('#{d_color}', '#{dog_name}')
+  def insert(d_name, d_color)
+    db.query("
+      INSERT INTO dogs(color, dog_name) VALUES('#{d_color}', '#{d_name}')
     ")
+  end 
+
+  def update(d_id, d_name, d_color)
+    update_name(d_id, d_name)
+    update_color(d_id, d_color)
   end
 
-  # update by ID
-  def update(d_id, d_name, d_color)
-    self.db.query("
+  def update_name(d_id, d_name)
+    db.query("
       UPDATE dogs
-      SET color='#{d_color}'
       SET dog_name='#{d_name}'
       WHERE dog_id=#{d_id}
     ")
   end
 
-  # update by name
-  def update_by_name(d_name, d_color)
-    self.db.query("
+  def update_color(d_id, d_color)
+    db.query("
       UPDATE dogs
       SET color='#{d_color}'
-       WHERE dog_name='#{d_name}'
-    ")
-  end
-
-  # delete/destroy
-  def put_to_sleep(d_id)
-    self.db.query("
-      DELETE FROM dogs
       WHERE dog_id=#{d_id}
-    ")
+    ")      
   end
 
-  # delete/destroy by name
-  def put_to_sleep(d_name)
-    puts "This will put down all dogs named #{d_name}.\nAre you sure you want to continue?"
-    answer = gets.chomp.downcase
 
-      if answer ==  ( "yes" || "y" )
-        db.query("
-          DELETE FROM dogs
-          WHERE dog_id='#{d_name}'
-        ")
-      end
+  def delete(d_id)
+  db.query("
+    DELETE FROM dogs
+    WHERE dog_id=#{d_id}
+  ")
   end
 
-  # See all dogs
-  def kettle
-    self.db.query("
-      SELECT * FROM dogs
-      ")
-  end 
+
 
   # new_from_db?
   # saved?
