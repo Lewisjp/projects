@@ -3,12 +3,15 @@ require 'debugger'
 
 class Dog
   
-  attr_accessor :db
+  attr_accessor :db, :name, :color
 
   @@db = Mysql2::Client.new(:host => "localhost", :username => "root", :database => "dogs")
 
   # color, dog_name, dog_id #=> :database dogs set up 
-  def initialize 
+  def initialize(name, color)
+    @name = name
+    @color = color
+
  #  new_table  #=> Table 'dogs.dogs' doesn't exist (Mysql2::Error)
   end
 
@@ -154,8 +157,9 @@ class Dog
 end
 
 dog = Dog.find(10)
-debugger
+# debugger
 puts 'hi'
+
 
 
 # refactorings?
