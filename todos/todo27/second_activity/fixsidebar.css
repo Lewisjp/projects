@@ -10,7 +10,7 @@ header {
 }
 section {
   background: lightgreen;
-  width: 75%;
+  width: 73%;
   float: left;
 }
 article {
@@ -19,7 +19,7 @@ article {
 }
 aside {
   background: pink;
-  width: 23%;
+  width: 24.4%;
   float: right;
 }
 header, article, section, .module {
