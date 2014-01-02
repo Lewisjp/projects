@@ -1,0 +1,27 @@
+/*the sidebar in this layout is messed up! show me different ways to fix it, using CSS:
+http://codepen.io/chriscoyier/pen/ClGcF*/
+/*This method fixes the aside, by making sure it fits wihthe section and boxes by %.*/
+
+body {
+  padding: 30px;
+}
+header {
+  background: lightblue;
+}
+section {
+  background: lightgreen;
+  width: 75%;
+  float: left;
+}
+article {
+  background: white;
+  margin: 0 0 1rem 0;
+}
+aside {
+  background: pink;
+  width: 23%;
+  float: right;
+}
+header, article, section, .module {
+  padding: 1rem;
+}

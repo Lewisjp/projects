@@ -1,0 +1,71 @@
+/*here's a design. it's a static grid with a fixed width of 800px. make it responsive:
+http://codepen.io/chriscoyier/pen/lDJmf*/
+
+* {
+  box-sizing: border-box; 
+}
+
+.page-wrap {
+  width: 53%;
+  margin: 1em auto;
+}
+
+.main-story {
+  max-width: 800px;
+  position: relative;
+  margin: 0 0 2em 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; 
+}
+
+a {
+  color: lightblue;
+}
+
+.story-intro {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 1.7em 1em;
+  color: white;
+}
+
+h1 {
+   max-width: 100%;
+   font-size: 4em;
+}
+h1, h2 {
+  margin: 0 0 0.4em 0;
+}
+
+.story-intro h1 {
+  font-size: 2.5em; 
+}
+.story-intro p {
+  margin: 0;
+}
+
+.sub-stories {
+  overflow: hidden;
+  margin: 0 0 1em 0;
+}
+
+.sub-story {
+  float: left;
+  width: 31.2%;
+  margin-right: 2em;
+  max-width: 250px;
+  position: relative;
+  font-size: 80%;
+}
+
+.last {
+  margin-right: 0;
+}
