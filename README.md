@@ -1,4 +1,2 @@
-day1_team_page
-==============
-
-Page for Day 1 Flatiron Team
+# Projects 
+This folder contains projects and exercises used to become a better developer.  
