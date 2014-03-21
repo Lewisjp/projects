@@ -1,14 +1,14 @@
 // G - The overlay should trigger on every page
 // H - Only use the libraries available on the site
 
-// This tracks is trigger has been activated yet. 
+// This tracks if trigger has been activated yet.  We'll only activate it once per page.
 var onePopUp = false 
 
 $(document).ready(function() {
 // D - capture scroll any percentage
 	$(window).scroll(function(e){
 		var scrollTop = $(window).scrollTop();
-		var documentHeight = $(document).height();
+		var documentHeight = document.body.clientHeight;
 		var windowHeight = $(window).height();
 		var rawScrollPercent = (scrollTop) / (documentHeight - windowHeight);
 		var scrollPercentage = Math.round(rawScrollPercent*100)/100;
@@ -46,21 +46,17 @@ $(document).ready(function() {
 						overlay.className = "overlay";
 						overlay.setAttribute("id", "overlay");
 						document.body.appendChild(overlay);  
-
-						document.getElementById("overlay").style.backgroundColor = "black";
-						document.getElementById("overlay").style.position = "fixed";
-						document.getElementById("overlay").style.opacity="0.7";
-						document.getElementById("overlay").style.top="0px";
-						document.getElementById("overlay").style.bottom="0px";
-						document.getElementById("overlay").style.left="0px";
-						document.getElementById("overlay").style.right="0px";
-						document.getElementById("overlay").style.zIndex="100";
-
-
-
+						var overlaid = document.getElementById("overlay").style;
+						overlaid.backgroundColor = "black";
+						overlaid.position = "fixed";
+						overlaid.opacity="0.7";
+						overlaid.top="0px";
+						overlaid.bottom="0px";
+						overlaid.left="0px";
+						overlaid.right="0px";
+						overlaid.zIndex="100";
 
 				        $('#overlay').fadeIn('fast',function(){
-
 
 // E - The trigger should show a centered overlay on top of the site that displays the number of items in cart and the cart total in large letters.  Design matters. 
 						var div = document.createElement('div'), 
@@ -71,6 +67,18 @@ $(document).ready(function() {
 						div.style.cursor = 'pointer';
 						document.body.appendChild(div); 
 
+						var popUp = document.getElementById("box").style 
+						popUp.textAlign="center";
+						popUp.fontSize="x-large";
+						popUp.borderRadius = "20px";
+						popUp.position="fixed";
+						popUp.top= "-200px";
+						popUp.left= "30%";
+						popUp.right= "30%";
+						popUp.backgroundColor= "white";
+						popUp.padding= "20px";
+						popUp.border= "2px solid #ccc";
+						popUp.zIndex="101";
 
 				            $('#box').animate({'top':'300px'},500);
 				        });

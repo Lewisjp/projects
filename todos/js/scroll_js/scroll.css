@@ -34,9 +34,9 @@ body {
     z-index:100;
 }
 */
-.box{
-    position:fixed;
-    top:-200px;
+/*.box{
+    position:fixed;*/
+/*    top:-200px;
     left:30%;
     right:30%;
     background-color: white;
@@ -48,9 +48,9 @@ body {
     -khtml-border-radius:20px;
     -moz-box-shadow: 0 1px 5px #333;
     -webkit-box-shadow: 0 1px 5px #333;
-    z-index:101;
-}
-
+    z-index:101;*/
+/*}
+*/
 /*a.boxclose{
     float:right;
     width:26px;
@@ -60,7 +60,7 @@ body {
     margin-right:-30px;
     cursor:pointer;
 }*/
-
+/*
 .box h1{
     border-bottom: 1px solid #808080;
     margin:-20px -20px 0px -20px;
@@ -75,4 +75,4 @@ body {
     -khtml-border-top-right-radius: 20px;
 }
 
-
+*/
