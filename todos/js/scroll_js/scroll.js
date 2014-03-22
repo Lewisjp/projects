@@ -1,7 +1,7 @@
 // G - The overlay should trigger on every page
 // H - Only use the libraries available on the site
 
-// This tracks if trigger has been activated yet.  We'll only activate it once per page.
+// This tracks if trigger has been activated once per page.
 var onePopUp = false 
 
 $(document).ready(function() {
