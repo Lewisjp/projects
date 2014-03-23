@@ -1,0 +1,45 @@
+Finding words is nice, but you can just do that with normal string operations. What about finding patterns of text? The first kind of pattern is to have a regex match any single character. You do this with the '.' (dot) operator, which says "match any one character here".
+
+You can see I'm sort of searching for the same things as before, but instead of the actual words, I'm putting a random '.' (dot) character to make that character a variable match.
+
+
+> !data "The lazy dog\nsleeps in the yard."
+> laz.
+0000: The lazy dog
+> y..d
+0001: sleeps in the yard.
+> y....
+0000: The lazy dog
+0001: sleeps in the yard.
+> T.e.l.z
+0000: The lazy dog
+
+
+
+
+Portability Notes
+Some regular expression engines mean different things when they say "everything". In Python "everything" means, "Well, not newline chars or just random stuff we decided wasn't really everything." Others actually really mean everything. It all depends on the engine and what they did with it.
+
+
+Extra Credit
+- Use !match to switch from search to match mode and then see if you get the same results. Why?
+	We get the same result because of the . allows for any substitute.
+- Write a line of only '.' (dot) sequences that matches the 2nd line but not the first.
+	While in search mode, I input "sl." to only search for lines that had "sl" in that order.  Only the second line has that sequence. 
+- Change the corpus such that you write two new lines but they still match the same as the other corpus.
+	> !data "Aria and Gambit\nAre Best friends."
+	> Ari.
+	0000: Aria and Gambit
+	> est.
+	0001: Are Best friends.
+	> A....
+	0000: Aria and Gambit
+	0001: Are Best friends.
+	> G.m.i.
+	0000: Aria and Gambit
+
+
+- Using a '\' (backslash) let's you escape the '.' to tell the regex that you mean "no actually match this as a ." Use that to fix the 3rd regex so it only matches the 2nd line of the corpus.
+	> !data "The lazy dog\nsleeps in the yard."
+	> y...\.
+	0001: sleeps in the yard.
