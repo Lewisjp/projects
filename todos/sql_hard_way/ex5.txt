@@ -1,0 +1,35 @@
+READ/ Selecting Data
+
+* is used to select all values 
+
+SELECT * FROM table;
+	SELECT * FROM person;
+SELECT criteria(column name) FROM table;
+	SELECT name, age FROM pet;
+SELECT criteria(column name) FROM table WHERE conditional;
+	SELECT name, age FROM pet WHERE dead = 0;
+
+
+Write a query that finds all names of pets older than 10 years.
+SELECT name FROM pet WHERE age > 10;
+
+Write a query to find all people younger than you. 
+SELECT * FROM person WHERE age < 20;
+
+Do one that's older.
+SELECT * FROM person WHERE age > 20;
+
+Write a query that uses more than one test in the WHERE clause using the AND to write it. 
+For example, WHERE first_name = "Zed" AND age > 30
+SELECT * FROM person WHERE last_name = "Lewis" && age > 20;
+
+Do another query that searches for rows using 3 columns and uses both AND and OR operators.
+
+SELECT * FROM person WHERE first_name = "Jeremy" OR "Bella" && last_name = "Lewis" && age > 20;
+#=> Jeremy
+
+SELECT first_name FROM person WHERE (first_name = "Bella" OR "Jeremy") AND (last_name = "Lewis") AND age > 20;
+#=> Bella
+
+Portability Notes:
+Some databases have additional operators and boolean logic tests, but just stick to the regular ones that you find in most programming languages for now.

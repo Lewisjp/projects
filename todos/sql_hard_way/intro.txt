@@ -1,0 +1,18 @@
+SQL - Structured Query Langauge used for dealign with databases
+
+CRUD 
+Create - Puts data into tables
+Read - Query data out of table
+Update - Change data already in table
+Delete - Remove data from table 
+
+SQL allows you to commit CRUD operations on tables to produce new tables or alter existing ones. 
+
+http://www.sequelpro.com/docs/Connecting_to_a_local_MySQL_Server
+
+Setting up load ENVR using Sequel Pro
+
+1. 	Socket Tab
+2.	Name: localhost
+3.	Username: root
+

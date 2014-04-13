@@ -1,0 +1,27 @@
+ex2
+
+Extra Credit
+In these tables I made a 3rd relation table to link them. How would you get rid of this relation table person_pet and put that information right into person? What's the implication of this change?
+If you can put one row into person_pet, can you put more than one? How would you record a crazy cat lady with 50 cats?
+Create another table for the cars people might own, and create its corresponding relation table.
+Search for "sqlite3 datatypes" in your favorite search engine and go read the "Datatypes In SQLite Version 3" document. Take notes on what types you can use and other things that seem important. We'll cover more later.
+
+
+ex3
+
+Extra Credit
+
+If you changed the database in the last exercise to not have the person_pet table then make a new database with that schema, and insert the same information into it.
+Go back to the list of data types and take notes on what format you need for the different types. For example, how many ways can you write TEXT data.
+
+ex4 
+
+Extra Credit
+
+Given the above, and given that you have an alternative design that puts the pet_id in the person table, which design is better for this situation?
+
+
+ex5 
+
+Extra Credit
+

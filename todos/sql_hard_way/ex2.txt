@@ -1,0 +1,11 @@
+In this exercise we created 3 tables.
+	person
+	pet
+	person_pet
+
+The 3rd table links tables person and pet.  
+They are linked if on the same line in the table.
+
+Data are tables
+Link tables = "relations"
+

@@ -1,0 +1,9 @@
+Referential Data
+
+INSERT INTO person_pet (person_id, pet_id) VALUES (0,0), (0,1),(1,2),(2,3),(3,4);
+
+
+Using this table, could a pet be owned by more than one person? 
+The person_pet table can have repeating values, so individual relations are on seperate lines.  This allows us to see all the pets associated with an individual person.
+
+Is that logically possible? What about the family dog? Wouldn't everyone in the family technically own it?  An individual has to take account for it, or a new person value reprsenting a family unit could be added, however that degrades the quality of the database.  
