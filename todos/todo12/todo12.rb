@@ -1,3 +1,4 @@
+require 'debugger'
 =begin
 **Tweet Shortener**
 
@@ -35,17 +36,17 @@ def twitterfy(message)
 			word.gsub! "at", "@"
 			word.gsub! "and", "&"
 			answer << word
+			
 		end
 	end
-	answer = answer.join(" ")
-	# you talk to the client about this scenario and decide together that the best thing to do is just truncate the string to 140 characters if it's still too long after you do the substitution.
-	if answer.length > 140
-		answer.slice!(0..140)
-	end
+	answer.join(" ")
+	# # you talk to the client about this scenario and decide together that the best thing to do is just truncate the string to 140 characters if it's still too long after you do the substitution.
+	# if answer.length > 140
+	# 	answer.slice!(0..140)
+	# end
 end
 
-# test =  "Hey guys, can anyone teach me how to be cool? I really want to be the best at everything, you know what I mean? Tweeting is super fun you guys!!!!"
-# twitterfy(test)
+
 
 
 
