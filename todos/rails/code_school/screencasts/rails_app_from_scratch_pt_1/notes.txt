@@ -1,0 +1,125 @@
+$ rails new wandrr
+
+add bootstrap 
+
+$ rails generate scaffold trip name:string description:text
+
+SKIPPED $ rake db:create 
+
+$ rake db:migrate
+
+root to: 'trips#index'
+
+$ rails generate scaffold destination name:string description:text 
+
+$ rails generate migration add_trip_id_to_destination trip_id:integer
+
+$ rake db:migrate
+
+// nesting 
+
+resource :trips do
+	resources :destinations
+end
+
+// nesting views & forms for path new_trips_destination
+
+// trips/show.html.erb
+
+<%= link_to 'New Destination', new_trip_destination_path(@trip) %>
+
+// Need to id the trip being called
+// controller/destinations...
+
+def new
+	@trip = Trip.find(params[:trip_id])
+
+// destinations/_forms...
+
+<%= form_for [@trip, @destination] do |f| %>
+
+// controllers/destinations...
+// Id trip worked on, and which destination it belongs to 
+def create 
+	@trip = Trip.find(params[:trip_id])
+	@destination = @trip.destinations.new(params[:destination])
+
+...
+
+def edit 
+	@trip = Trip.find(params[:trip_id])
+
+// Show all destinations for a trip
+// trips/show...
+
+<table class="table">
+	<tr>
+		<th>Destination</th>
+		<th>Description</th>
+	</tr>
+
+	<% @trip.destinations.each do |destination| %>
+		<tr>
+			<td><%= destination.name %></td>
+			<td><%= destination.description %></td>
+		</tr>
+	<% end %>
+</table>
+
+// trips/show...
+// add edit link
+
+<td><%= link_to destination.name, edit_trip_destination_path(@trip, destination) %></td>
+
+// nest path to destination under its trip
+// destination_controller 
+
+def create
+	
+	respond_to do |format|
+		if @destination.save
+			format.html { redirect_to trip_destination_path(@trip, @destination),//CODE FOLLOWS....//}
+
+
+// destinations/show.html
+
+<%= link_to 'Edit', edit_trip_destination_path(@trip, @destination) %> |
+<%= link_to 'Back', trip_path(@trip) %>
+
+// destinations_controller 
+
+def show
+	@trip = Trip.find(params[:trip_id])
+
+
+// fix redirect
+def update 
+
+	format.html {redirect_to trip_destination_path(@destination.trip, @destination),//code...//}
+
+// make it so destination only shows up under trips, so we'll limit whats viewable from routes 
+
+resources :destinations, only: :index
+
+// validations
+	// trip & destination model
+		validates_presence_of :name
+
+// destinations_controller - fix update bugs 
+def update
+	@destination = Destination.find(params[:id])
+	@trip = @destination.trip
+
+
+// side notes for Rails 4
+
+gem 'rails', '4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'protected_attributes'
+
+
+HW
+https://www.codeschool.com/code_tv/rails-app-from-scratch-part-1
+go the coding challenge 
