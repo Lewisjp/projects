@@ -5,23 +5,41 @@ class DestinationsController < ApplicationController
   # GET /destinations.json
   def index
     @destinations = Destination.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @destinations }
+    end
   end
 
   # GET /destinations/1
   # GET /destinations/1.json
   def show
     @trip = Trip.find(params[:trip_id])
+    @destination = Destination.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @destination }
+    end
   end
 
   # GET /destinations/new
   def new
     @trip = Trip.find(params[:trip_id])
     @destination = Destination.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @destination }
+    end
+
   end
 
   # GET /destinations/1/edit
   def edit
     @trip = Trip.find(params[:trip_id])
+    @destination = Destination.find(params[:id])
   end
 
   # POST /destinations
@@ -49,11 +67,11 @@ class DestinationsController < ApplicationController
     @trip = @destination.trip
     
     respond_to do |format|
-      if @destination.update(destination_params)
+      if @destination.update_attributes(params[:destination])
         format.html { redirect_to trip_destination_path(@destination.trip, @destination), notice: 'Destination was successfully updated.' }
-        format.json { render :show, status: :ok, location: @destination }
+        format.json { head :no_content }
       else
-        format.html { render :edit }
+        format.html { render action: "edit" }
         format.json { render json: @destination.errors, status: :unprocessable_entity }
       end
     end
@@ -62,6 +80,7 @@ class DestinationsController < ApplicationController
   # DELETE /destinations/1
   # DELETE /destinations/1.json
   def destroy
+    @destination = Destination.find(params[:id])
     @destination.destroy
     respond_to do |format|
       format.html { redirect_to destinations_url, notice: 'Destination was successfully destroyed.' }
