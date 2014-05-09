@@ -1,0 +1,15 @@
+We're in the wilderness of a Java.  We're going to need to learn the basics before we can tackle the larger challenges ahead.  
+
+Comments - 
+
+Commenting your code is the best way to prepare an easy hand off for when you leave.  Its important to set up your fellow developers for success.  In Java there are 3 ways to add comments to your code.
+
+/* comment */
+
+/** documentation comments (doc comment).  The Java Development Kit (JDK) uses doc comments to prepare documentation. */
+
+// regular text comment.  
+
+Testimonials - 
+
+What follows in Java will look very 

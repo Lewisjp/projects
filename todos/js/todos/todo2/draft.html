@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+	<head>
+		<meta charset="utf-8">
+		<title>Blog draft</title>
+ 
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+		<script type="text/javascript" src="blog.js"></script>
+	</head>
+	<body>
+
+JavaScript Munchkins: Function Expressions
+
+  Declared functions, like the Plutonium Dragon from the last post, are built in memory right as we load the program.  
+<br><br>
+  Function expresessions are assigned to a varaible so they'll only be loaded when its reached inside the program.
+<br><br>
+<font color="green">
+  // Syntax of a Function Expression<br>
+</font><font color="red">
+  var variable = function functionNameIsOptional (parameters) {
+<br>
+    code to be executed
+<br>
+  };
+</font>
+<br>
+The function name is option above.  If the function has no name, then its an anonymous function.
+<br><br>
+<font color="green">
+  // example of calling a Function Expression<br>
+</font><font color="red">
+  variable(parameters);<br><br>
+</font>
+  You'll notice above that the variable name includes parentheses, and we've included parameters to be used by the function it contains.  
+<br><br>
+  Lets see an example
+<br><br>
+
+PICTURE 
+<br><br>Call the Function Expression 
+<button onclick="combatStrength(playerLevel, powerUps);
+">combatStrength(playerLevel, powerUps);
+</button><br><br><br><br>
+We're going to want to start playing with other people.  At this point it may be best to create an array to keep track of each player's level.  Our game will have 4 players.  At the start of game everyone begins at level 1.
+<br>
+</font><font color="red">
+  var gameOn = true; <br><br>
+</font>
+</font><font color="red">
+  var allPlayerLevels = [1,1,1,1]; <br><br>
+</font>
+The first player to reach level 10 wins.  Let's create a function to check if a player has won.  <br><br>
+
+
+=====================
+
+
+
+
+
+
+
+	</body>
+ 
+</html>
