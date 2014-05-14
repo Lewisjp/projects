@@ -12,4 +12,4 @@ Commenting your code is the best way to prepare an easy hand off for when you le
 
 Testimonials - 
 
-What follows in Java will look very 
+What follows in Java will look very familiar 
