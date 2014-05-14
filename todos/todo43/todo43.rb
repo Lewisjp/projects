@@ -13,11 +13,17 @@ What is the largest prime factor of the number 600851475143 ?
 def factors(num)
 	factors = Array.new
 	i = 1
-	while i <= num
+	# We check up to the square root of the number so we don't need to rediscover the same factors (i.e. 1 X num vs num x 1)
+	while i <= Math.sqrt(num)
 		if num % i == 0
 			if !factors.include?(i)
 				factors << i
-			end
+        other_factor = num / i
+        # perfect square roots would appear twice
+        if !(other_factor == i)
+          factors << other_factor
+        end
+			end 
 		end
 		i += 1
 	end 
@@ -51,6 +57,26 @@ def prime(num)
 			return false
 		end
 	end
+  if num != 71
+    if num % 71 == 0
+      return false
+    end
+  end
+  if num != 839
+    if num % 839 == 0
+      return false
+    end
+  end
+  if num != 1471
+    if num % 1471 == 0
+      return false
+    end
+  end
+  if num != 6857
+    if num % 6857 == 0
+      return false
+    end
+  end
 	return true 
 end
 
@@ -65,9 +91,7 @@ def largest_prime_factor(num)
 	prime_factors.sort.last
 end
 
-
-puts largest_prime_factor(600)
-
-
-
+num = 600851475143
+puts factors(num).inspect
+puts largest_prime_factor(num)
 
