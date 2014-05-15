@@ -1,0 +1,28 @@
+Recipes
+  Hash
+  	variable = {key: value}
+  reading hashes
+    variable[:key] => value
+
+  #finds the item with id 3 
+  t = Tweet.find(3) 
+
+  
+Callbacks
+
+	to be used in models, see zombie
+
+	before_validation
+	after_validation
+
+	before_save
+	after_save
+
+	before_create
+	after_create
+
+	before_update
+	after_update
+
+	before_destroy
+	after_destroy
