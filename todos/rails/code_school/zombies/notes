@@ -7,7 +7,10 @@ Recipes
   #finds the item with id 3 
   t = Tweet.find(3) 
 
+C9VWH-KK9QV-FYKRY-PJ6QH-T3PMR
   
+C9VWHKK9QVFYKRYPJ6QHT3PMR
+
 Callbacks
 
 	to be used in models, see zombie
@@ -26,3 +29,22 @@ Callbacks
 
 	before_destroy
 	after_destroy
+
+
+
+in Rails C view tables
+ActiveRecord::Base.connection.tables
+
+has_one 
+
+z = Zombie.last
+z.create_brain(status: "Squashed", flavor: "Mudd")
+z.brain #see all attributes of that zombie's brain
+z.brain.flavor # see only the flavor attribute of that zombies brain 
+
+has_many
+# to add a new role type
+z.roles << Role.new(title: "Captain")
+
+# to add a role reference that already exists
+z.roles << Role.find_by_title("Captain")

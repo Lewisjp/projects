@@ -12,6 +12,14 @@ class Zombie < ActiveRecord::Base
 	Zombie.recent.fresh.rotting
 =end 
 
+
+	# relationship is linked so if zombie is destoryed so is the brain 
+	has_one :brain, dependent: :destroy 
+
+	has_many :assignments
+	has_many :roles, through: :assignments
+
+
 	# run the following before saving a Zombie object
 	before_save :making_rotting
 

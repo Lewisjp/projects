@@ -4,7 +4,8 @@ class ZombiesController < ApplicationController
   # GET /zombies
   # GET /zombies.json
   def index
-    @zombies = Zombie.all
+    # includes queries for the brain for the zombie (faster) at once
+    @zombies = Zombie.includes(:brain).all
 
     respond_to do |format|
       format.html
