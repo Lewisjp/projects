@@ -1,4 +1,5 @@
 class Zombie < ActiveRecord::Base
+	after_save :decomp_change_notification, if: :decomp_changed?
 	attr_accessible :name, :age, :bio, :email
 
 	scope :rotting, where(rotting: true)
@@ -27,6 +28,12 @@ class Zombie < ActiveRecord::Base
 		if age > 20 # age is a attribute of Zombie
 			self.rotting = true # setting variable: self is the Zombie class 
 		end
+	end
+
+	private
+
+	def decomp_change_notification
+		ZombieMailer.decomp_change(self).deliver
 	end
 
 

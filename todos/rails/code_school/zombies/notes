@@ -48,3 +48,12 @@ z.roles << Role.new(title: "Captain")
 
 # to add a role reference that already exists
 z.roles << Role.find_by_title("Captain")
+
+
+form helper
+	quantity good for range
+
+	for mobile => keyboards 
+		:email
+		:website
+		:mobile
