@@ -91,25 +91,48 @@ myObj["name"] = "Charlie";
 myObj.name = "Charlie";
 
 */
-
 var friends = {
 
 bill: {
-    firstName: 'bill',
+    firstName: 'Bill',
     lastName: 'LaBarre',
-    number: '1234567'
+    number: '1234567',
+    address: []
 },
 
 steve: {
-    firstName: 'steve',
+    firstName: 'Steve',
     lastName: 'Smith',
-    number: '1234567'
+    number: '1234567',
+    address: []
 },
 
 aria: {
-firstName: 'aria',
-lastName: 'lewis',
-number: '1234567'
+    firstName: 'Aria',
+    lastName: 'lewis',
+    number: '1234567',
+    address: []
 }
 
 };
+
+var list = function(friends){
+    for(var key in friends){
+        console.log(key);
+    }
+};
+
+var search = function(name){
+    for (var key in friends){
+       if (friends[key].firstName == name){
+            console.log(friends[key]);
+            return friends[key];
+       } 
+    }
+};
+
+///
+
+(((3 * 90) === 270) || !(false && (!false)) || "bex".toUpperCase() === "BEX");
+
+//
