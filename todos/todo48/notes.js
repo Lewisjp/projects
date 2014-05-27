@@ -135,4 +135,175 @@ var search = function(name){
 
 (((3 * 90) === 270) || !(false && (!false)) || "bex".toUpperCase() === "BEX");
 
-//
+//////////////
+
+// here we define our method using "this", before we even introduce bob
+var setAge = function (newAge) {
+  this.age = newAge;
+};
+// now we make bob
+var bob = new Object();
+bob.age = 30;
+// and down here we just use the method we already made
+bob.setAge = setAge;
+
+// change bob's age to 50 here
+bob.setAge(50);
+
+// make susan here, and first give her an age of 25
+
+var susan = new Object();
+susan.age = 25;
+susan.setAge = setAge;
+
+// here, update Susan's age to 35 using the method
+susan.setAge(35);
+
+////////
+
+var rectangle = new Object();
+rectangle.height = 3;
+rectangle.width = 4;
+// here is our method to set the height
+rectangle.setHeight = function (newHeight) {
+  this.height = newHeight;
+};
+// help by finishing this method
+rectangle.setWidth = function (newWidth){
+  this.width = newWidth;  
+};
+  
+
+// here change the width to 8 and height to 6 using our new methods
+
+rectangle.setHeight(6);
+rectangle.setWidth(8);
+
+
+////////
+
+function Person(name,age) {
+  this.name = name;
+  this.age = age;
+}
+
+// Let's make bob and susan again, using our constructor
+var bob = new Person("Bob Smith", 30);
+var susan = new Person("Susan Jordan", 25);
+// help us make george, whose name is "George Washington" and age is 275
+
+var george = new Person("George Washington", 275);
+
+///////
+
+function Rectangle(height, width) {
+  this.height = height;
+  this.width = width;
+  this.calcArea = function() {
+    return this.height * this.width;
+  };
+  // put our perimeter function here!
+  this.calcPerimeter = function() {
+    return (this.height * 2 ) + (this.width * 2)
+  };
+}
+
+var rex = new Rectangle(7,3);
+var area = rex.calcArea();
+var perimeter = rex.calcPerimeter();
+
+//////
+
+// Our Person constructor
+
+function Person(name, age){
+  this.name = name;
+  this.age = age;
+};
+
+// Now we can make an array of people
+family = [new Person("alice", 40), new Person("bob", 42), new Person("michelle", 8), new Person("timmy", 6)];
+
+// loop through our new array
+
+for(var counter = 0; counter < family.length; counter++){
+  console.log(family[counter]);  
+};
+
+//////
+
+function Circle (radius) {
+    this.radius = radius;
+    this.area = function () {
+        return Math.PI * this.radius * this.radius;
+        
+    };
+    // define a perimeter method here
+    this.perimeter = function(){
+        return 2 * Math.PI * radius;
+    };
+};
+
+////
+var contacts = [bob, mary];
+
+console.log(contacts[1].phoneNumber)
+
+//////
+
+var bob = {
+    firstName: "Bob",
+    lastName: "Jones",
+    phoneNumber: "(650) 777-7777",
+    email: "bob.jones@example.com"
+};
+
+var mary = {
+    firstName: "Mary",
+    lastName: "Johnson",
+    phoneNumber: "(650) 888-8888",
+    email: "mary.johnson@example.com"
+};
+
+var contacts = [bob, mary];
+
+function printPerson(person) {
+    console.log(person.firstName + " " + person.lastName);
+}
+
+function list() {
+  var contactsLength = contacts.length;
+  for (var i = 0; i < contactsLength; i++) {
+    printPerson(contacts[i]);
+  }
+}
+
+/*Create a search function
+then call it passing "Jones"*/
+
+var search = function(lastName){
+    var contactsLength = contacts.length;
+    for (var i = 0; i < contactsLength; i++ ){
+        if(contacts[i].lastName == lastName){
+            printPerson(contacts[i]);  
+        };
+
+    };
+};
+
+var add = function(firstName,lastName, email, phoneNumber){
+    contacts.push(firstName = {
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    phoneNumber: phoneNumber
+    })
+};
+
+
+
+
+add("Bella","Lewis","B@gmail.com", "num")
+list();
+
+///
