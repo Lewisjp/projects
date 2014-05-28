@@ -307,3 +307,229 @@ add("Bella","Lewis","B@gmail.com", "num")
 list();
 
 ///
+
+var myObj = {
+    // finish myObj
+    name: "Jeremy"
+};
+
+console.log( myObj.hasOwnProperty('name') ); // should print true
+console.log( myObj.hasOwnProperty('nickname') ); // should print false
+
+
+//////
+
+var suitcase = {
+shirt: "Hawaiian",
+};
+
+if(suitcase.hasOwnProperty('shorts') === true) {
+console.log(suitcase.shorts);
+}
+else {
+suitcase["shorts"] = "dungarees";
+console.log(suitcase.shorts);
+}
+
+/////
+
+var dog = {
+species: "bulldog",
+age: 3,
+color: brown
+};
+// To print out all elements, we can use a for/in loop, like this:
+
+for(var property in dog) {
+  console.log(property);
+}
+
+//////
+
+var nyc = {
+    fullName: "New York City",
+    mayor: "Bill de Blasio",
+    population: 8000000,
+    boroughs: 5
+};
+
+// write a for-in loop to print the value of nyc's properties
+for(var x in nyc){
+    console.log(nyc[x]);  
+};
+
+/*
+Here we have very similar code as last time, but there is an important difference. Instead of using buddy.bark to add the bark method to just the buddy object, we use Dog.prototype.bark.
+
+Click run this time, and both buddy and snoopy can bark just fine! Snoopy can bark too even though we haven't added a bark method to that object. How is this so? Because we have now changed the prototype for the class Dog. This immediately teaches all Dogs the new method.
+*/
+
+function Dog (breed) {
+  this.breed = breed;
+};
+
+// here we make buddy and teach him how to bark
+var buddy = new Dog("golden Retriever");
+Dog.prototype.bark = function() {
+  console.log("Woof");
+};
+buddy.bark();
+
+// here we make snoopy
+var snoopy = new Dog("Beagle");
+/// this time it works!
+snoopy.bark();  
+
+//////
+
+// create your Animal class here
+function Animal(name, numLegs){
+    this.name = name;
+    this.numLegs = numLegs;
+};
+
+
+// create the sayName method for Animal
+
+Animal.prototype.sayName = function(){
+    console.log('Hi my name is '+ this.name);
+};
+
+
+// provided code to test above constructor and method
+var penguin = new Animal("Captain Cook", 2);
+penguin.sayName();
+/////
+
+// define a Penguin class
+function Penguin(name){
+    this.name = name;
+    this.numLegs = 2;
+};
+
+// set its prototype to be a new instance of Animal
+Penguin.prototype = new Animal();
+
+/////
+
+function Penguin(name) {
+    this.name = name;
+    this.numLegs = 2;
+}
+
+// create your Emperor class here and make it inherit from Penguin
+function Emperor(name){
+    this.name = name;
+};
+Emperor.prototype = new Penguin();
+
+// create an "emperor" object and print the number of legs it has
+
+var emperor = new Emperor("Bella");
+
+console.log(emperor.numLegs);
+
+/////
+
+function Person(first,last,age) {
+   this.firstname = first;
+   this.lastname = last;
+   this.age = age;
+   var bankBalance = 7500;
+}
+
+// create your Person 
+var john = new Person("john", "Lewis", 30);
+
+// try to print his bankBalance
+console.log(john.bankBalance); // #=> undefined
+
+////////
+
+/*
+Your method should resemble how we defined getBalance last time—you should use this.askTeller = function() { }. Don't declare askTeller with var.
+
+You return method the same way that you would return simple variables. Be careful not to call the method though and leave out parentheses in your return statement!
+*/
+
+function Person(first,last,age) {
+   this.firstname = first;
+   this.lastname = last;
+   this.age = age;
+   var bankBalance = 7500;
+  
+   var returnBalance = function() {
+      return bankBalance;
+   };
+       
+   // create the new function here
+   this.askTeller = function(){
+        return returnBalance;  
+   };
+}
+
+var john = new Person('John','Smith',30);
+console.log(john.returnBalance);
+var myBalanceMethod = john.askTeller();
+var myBalance = myBalanceMethod();
+console.log(myBalance);
+
+/////
+
+var languages = {
+    english: "Hello!",
+    french: "Bonjour!",
+    notALanguage: 4,
+    spanish: "Hola!"
+};
+
+// print hello in the 3 different languages
+for(var x in languages){
+    if(typeof languages[x] === "string"){
+        console.log(languages[x]);
+    }
+};
+///////
+
+var cashRegister = {
+    total:0,
+//insert the add method here    
+    
+    add: function(itemCost){
+        total += itemCost;  
+    },
+    
+    scan: function(item) {
+        switch (item) { 
+        case "eggs": 
+            this.add(0.98); 
+            break;
+        
+        case "milk": 
+            this.add(1.23); 
+            break;
+        
+        //Add other 2 items here
+        case "magazine":
+            this.add(4.99);
+            break;
+        case "chocolate":
+            this.add(0.45);
+            break;
+        }
+        return true;
+    }
+    
+};
+
+//Scan 2 eggs and 3 magazines
+cashRegister.scan("eggs");
+cashRegister.scan("eggs");
+cashRegister.scan("magazine");
+cashRegister.scan("magazine");
+cashRegister.scan("magazine");
+
+//Show the total bill
+console.log('Your bill is '+cashRegister.total);
+
+/////
