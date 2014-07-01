@@ -1,0 +1,10 @@
+Week 2
+
+	In order to use I/O in Java, you need to import the package comp102x.IO at the beginning of the program. (set up by this course)
+
+		import comp102x.IO;
+
+			IO.output("Will display, but stay on same Line");
+			IO.outputln("Will display, and move the next printing position to a new line.");
+
+		System.out.println("Standard output method for Java.");
