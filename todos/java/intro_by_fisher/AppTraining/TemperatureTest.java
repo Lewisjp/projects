@@ -20,6 +20,11 @@ class Temperature
         degrees = d;
         scale = s;
     }
+    
+    public void increase ()
+    {
+        degrees++;
+    }
 }
     
     
@@ -31,7 +36,14 @@ public class TemperatureTest
             // Here we work with the attributes of t, a Temperature object
             t = new Temperature();
             System.out.println("t = " + t.toString() ); // explicit
+            
+            t.increase();   // increase temp
+            System.out.println("t = " + t.toString() );
+            
             t.set (100, 'F');
             System.out.println("t = " + t); // implicit
+            
+            t.increase();
+            System.out.println("t = " + t);
         }
     }

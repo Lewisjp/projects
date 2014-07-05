@@ -1,4 +1,9 @@
 import comp102x.IO;
+/**
+ * @author Jeremy
+ * 
+ */
+
 
 public class Lab02
 {
@@ -54,6 +59,8 @@ public class Lab02
         double a;
         double b;
         double c;
+        double firstRoot;
+        double secondRoot;
         
         // Ask user for input
         IO.output("Enter a: ");
@@ -63,11 +70,15 @@ public class Lab02
         IO.output("Enter c: ");
         c = IO.inputDouble();
         
-        // computer & display results
-        quadraticEquation = 
+        // compute 
+        double discriminant; 
+        discriminant = Math.sqrt(b*b - 4 *a * c); // get the square root of the discriminant for the formula
+        firstRoot = (-b + discriminant)/(2*a);
+        secondRoot = (-b - discriminant)/(2*a);
         
-        
-        
+        // display results 
+        IO.output("First solution for x = " + firstRoot);
+        IO.outputln("Second solution for x = " + secondRoot);
         
     }
 }
