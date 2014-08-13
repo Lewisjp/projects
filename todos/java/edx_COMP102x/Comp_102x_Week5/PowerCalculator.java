@@ -40,9 +40,36 @@ public class PowerCalculator
             }
 
          */
+        
+        
     
     
+    }
     
+        public static int fact2(int n1, int n2) {  
+    
+        int t = 1; // initialize t to 1       
+        for (int counter = n1; counter <= n2; counter++) {
+            t = t * counter;
+        }
+        return t;
+    }
+    
+        public static int fact3(int n1, int n2) {  
+    
+        int t = 1; // initialize t to 1       
+        for (int counter = n2; counter > n1; counter--) {
+            t = t * counter;
+        }
+        return t;
+        /*
+         * The loop goes from iteration number n2 down to and excluding iteration number n1. 
+         * The loop will exit when the current iteration number is equal to n1. 
+         * Initially, the variable t is initialized to be 1. 
+         * In each iteration, the value of t is multiplied with the current iteration number and the result is assigned back to t. 
+         * Therefore, the result of the program will be n2 * (n2 - 1) * … * (n1 + 1), 
+         * which can be written as (n1 + 1) * … * (n2 - 1) * n2.
+         */
     }
 }
 

@@ -2,4 +2,8 @@
 comment0.params=number\ power
 comment0.target=long\ powerN(int,\ int)
 comment0.text=\n\ Calculate\ the\ non-negative\ power\ of\ an\ integer\ number.\ If\ a\ negative\ power\ is\ input,\ the\ method\ returns\ 1.\n\ \n\ @param\ number\ The\ number\ to\ take\ power.\n\ @param\ power\ The\ power\ factor\ to\ be\ taken\ to.\n\ @return\ The\ calculation\ result\ after\ taking\ power\ of\ the\ integer\ number.\n
-numComments=1
+comment1.params=n1\ n2
+comment1.target=int\ fact2(int,\ int)
+comment2.params=n1\ n2
+comment2.target=int\ fact3(int,\ int)
+numComments=3
