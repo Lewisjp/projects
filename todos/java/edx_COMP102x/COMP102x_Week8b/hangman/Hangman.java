@@ -239,6 +239,13 @@ public class Hangman implements KeyListener
          * if the int parameter life is equal to zero. Otherwise, return false.
          */
         
+        if ( (displayWord.equalsIgnoreCase(secretWord)) || life == 0 ){
+           return true;
+        }
+        else{
+           return false; 
+        }
+        
         
         
         
