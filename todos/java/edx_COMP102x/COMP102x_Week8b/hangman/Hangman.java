@@ -209,9 +209,18 @@ public class Hangman implements KeyListener
     private String updateDisplayWord(String displayWord, String secretWord, char guess)
     {
         // Please write your code after this line
+    	int i = 0;
+    	StringBuffer playWord = new StringBuffer(displayWord);
+    	while(i < secretWord.length()){
+            if( guess ==  secretWord.toLowerCase().charAt(i)  || guess ==  secretWord.toUpperCase().charAt(i) ){
+                playWord.setCharAt(i, guess);
+            }
+            i++;
+        }
         
+        System.out.println( playWord.toString() );
         
-        
+        return playWord.toString();
     }
     
     /**
@@ -225,6 +234,11 @@ public class Hangman implements KeyListener
     private boolean checkGameOver(String displayWord, String secretWord, int life)
     {
         // Please write your code after this line
+        /**
+         * Return true if the String parameter displayWord is equal to the String parameter secretWord or 
+         * if the int parameter life is equal to zero. Otherwise, return false.
+         */
+        
         
         
         

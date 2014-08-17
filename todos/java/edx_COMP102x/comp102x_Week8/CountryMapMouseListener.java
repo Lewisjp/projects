@@ -99,6 +99,12 @@ public class CountryMapMouseListener implements MouseListener
         
         // please write your code after this line
         
+        int x = e.getX() ;
+        int y = e.getY() ;
+        
+        boolean leftClicked =  (e.getButton() == MouseEvent.BUTTON1);
+        
+        boolean rightClicked =  (e.getButton() == MouseEvent.BUTTON3); 
         
         
         
