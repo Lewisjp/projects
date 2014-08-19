@@ -10,6 +10,13 @@ public class Temperature {
 		degrees = d;
 		scale = s;
 	}
+
+	// Constructor Function
+	Temperature (int newDegrees, char newScale) {
+		degrees = newDegrees;
+		scale = newScale;
+	}
+
 }
 
 
