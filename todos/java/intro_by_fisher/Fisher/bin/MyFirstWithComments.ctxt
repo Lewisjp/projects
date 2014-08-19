@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=msg
+comment0.target=java.lang.String\ getDatedMessage(java.lang.String)
+comment0.text=\n\ Returns\ String\ with\ given\ message\ preceded\ by\ a\ data\ stamp\n\ \n\ @param\ args\ Array\ of\ Strings\ corresponding\ to\ command\ line\ \n\ @return\ Original\ message\ with\ date\ stamp\ preceding\ it\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\n\ The\ main\ method\ displays\ welcome\ message\n\ \n\ @param\ args\ Array\ of\ Strings\ correspondong\ to\ command\ line\n
+numComments=2

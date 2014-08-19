@@ -1,3 +1,5 @@
+import fisher.Temperature;
+
 class Temperature
 {
     public int degrees = 0;

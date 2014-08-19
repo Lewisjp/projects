@@ -1,3 +1,5 @@
+import fisher.Temperature;
+
 /**
  * @author Gambit
  * 
