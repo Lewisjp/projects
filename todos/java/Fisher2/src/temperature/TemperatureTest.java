@@ -19,6 +19,15 @@ public class TemperatureTest {
 
 		t.set('C');
 		System.out.println("t = " + t);
+		
+		Temperature t1 = new Temperature();
+		System.out.println("Default Constructor is " + t1);
+		
+		Temperature t2 = new Temperature('F');
+		System.out.println("Constructor that just takes a char is " + t2 );
+		
+		Temperature t3 = new Temperature(99, 'F');
+		System.out.println("Constructor that has both degrees and char is " + t3);
 	}
 
 	

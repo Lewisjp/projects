@@ -29,6 +29,15 @@ public class Temperature {
 		scale = newScale;
 	}
 
+	Temperature () {} // Uses defaults 
+	
+	Temperature (int newDegrees) {
+		degrees = newDegrees;
+	}
+	
+	Temperature (char newScale){
+		scale = newScale;
+	}
 }
 
 
