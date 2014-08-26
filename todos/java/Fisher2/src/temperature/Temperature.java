@@ -32,7 +32,8 @@ public class Temperature {
 	Temperature () {} // Uses defaults 
 	
 	Temperature (int newDegrees) {
-		degrees = newDegrees;
+		this (newDegrees, 'C'); // Using 'this' keyword to call on another constructor 
+								// Consolidate code from multiple constructors 
 	}
 	
 	Temperature (char newScale){
