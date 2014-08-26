@@ -6,11 +6,23 @@ public class Temperature {
 	public String toString(){
 		return "" + degrees + scale;
 	}
+	
+	// Method Overloading for set
 	public void set (int d, char s){
 		degrees = d;
 		scale = s;
 	}
 
+	public void set (int d){
+		degrees = d;
+	}
+	
+	public void set (char s){
+		scale = s;
+	}
+	
+
+	
 	// Constructor Function
 	Temperature (int newDegrees, char newScale) {
 		degrees = newDegrees;

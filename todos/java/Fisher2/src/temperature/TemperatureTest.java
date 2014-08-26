@@ -13,6 +13,12 @@ public class TemperatureTest {
 		System.out.println("t = " + t.toString());
 		t.set(100, 'F');
 		System.out.println("t = " + t);
+		
+		t.set(151);
+		System.out.println("t = " + t);
+
+		t.set('C');
+		System.out.println("t = " + t);
 	}
 
 	
