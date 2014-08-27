@@ -14,7 +14,7 @@ public class TemperatureTest {
 		t.set(100, 'F');
 		System.out.println("t = " + t);
 		
-		t.set(151);
+		t.set(151);s
 		System.out.println("t = " + t);
 
 		t.set('C');
