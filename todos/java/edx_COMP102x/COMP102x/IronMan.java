@@ -32,8 +32,13 @@ public class IronMan
     
     public void getName()
     {
+
+int double1 = 1.0;
+
+
+        
         // ("Mark + id) concatenates "Mark " and id to form a character string
-        return "Mark " + id;
+       // return ("Mark + id);
     }
     
     public static void main(String[] args)

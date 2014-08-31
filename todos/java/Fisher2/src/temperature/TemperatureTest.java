@@ -1,5 +1,7 @@
 package temperature;
 
+import java.util.Stack;
+
 public class TemperatureTest {
 
 	public static void main(String[] args) {
@@ -14,7 +16,7 @@ public class TemperatureTest {
 		t.set(100, 'F');
 		System.out.println("t = " + t);
 		
-		t.set(151);s
+		t.set(151);
 		System.out.println("t = " + t);
 
 		t.set('C');
@@ -28,8 +30,58 @@ public class TemperatureTest {
 		
 		Temperature t3 = new Temperature(99, 'F');
 		System.out.println("Constructor that has both degrees and char is " + t3);
+
+		
+		
+
+		int[] arr1 = {1, 2, 3, 4, 5};
+		int[] arr2 = {6, 7, 8, 9, 10};
+		
+		//System.out.println(sumOfProduct(arr1, arr2, arr1.length));
+		
+		
+		
+		
+		
+		
 	}
 
 	
+	public static int sumOfProduct (int[] arr1, int[] arr2, int n){
+		 
+		 
+		
+		/**
+		 * 
+		 * Make a List out of the array with Arrays.asList(), 
+		 * and call remove() on all the appropriate elements. 
+		 * Then call toArray() on the 'List' to make back into an array again.
+		 */
+
+		if (n == 0) {
+			return 0;
+		}
+		else {
+			return arr1[n-1] * arr2[n-1] + sumOfProduct(arr1, arr2, n-1); 
+		}
+		
+	}
+	
+	
+	
+	public void transpose(int[][] input){
+		for(int i = 0; i < input.length; i++){
+			for(int j = i; j < input[i].length; j++){
+				int temp = input[i][j];
+			    input[i][j] = input[j][i];
+			    input[j][i] = temp;
+			}
+		}
+		
+	}
+
+
 	
 }
+	
+	
