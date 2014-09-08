@@ -1,0 +1,21 @@
+
+.column1 {
+color:#000000;background-color:#000000;height:5px;border:none;
+}
+
+
+.column2 {
+color:#248F24;background-color:#248F24;height:5px;border:none;
+}
+
+.title2 {
+color:#248F24;
+}
+
+.column3 {
+color:#FFFFFF;background-color:#FFFFFF;height:1px;border:none;
+}
+
+.bubble {
+  color:#FFFFFF;background-color:#248F24;padding: 0.5cm;border-radius: 10px;
+}
