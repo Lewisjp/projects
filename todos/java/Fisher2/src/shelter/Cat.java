@@ -5,6 +5,20 @@ public class Cat {
 
 	public static void main(String[] args){
 		
+		CatTraits WilliamWallace = new CatTraits();
+		// Here we use our get method to find the value of the private variable, privateOwner 
+		System.out.println("William Wallace the cat responds to one master, " + WilliamWallace.getOwner() + ".");
+		
+		CatTraits RobertTheBruce = new CatTraits();
+		// Here we're going to use our set method to change the value of our private variable, privateOwner
+		RobertTheBruce.setOwner("King Edward 'Longshanks'");
+		// Here we use our get method to find the value of the private variable, privateOwner 
+		System.out.println("Robert The Bruce, the cat responds to one master, " + RobertTheBruce.getOwner() + ".");		
+		
+	}
+}
+		
+		
 		// Here we use the default options
 		CatTraits Gambit = new CatTraits();
 		
@@ -24,5 +38,4 @@ public class Cat {
 	}
 	
 }
-
 

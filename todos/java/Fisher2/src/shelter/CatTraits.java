@@ -3,10 +3,19 @@ package shelter;
 
 public class CatTraits {
 	
+	private String privateOwner = "Freedom";
+	public void setOwner (String newOwner){
+		privateOwner = newOwner;
+	}
+	public String getOwner(){
+		return privateOwner;
+	}
+
 	public int legs = 4;
 	public String name = "Gambit";
 	public boolean cat = true;
 	public String breed = "Mountain Lion";
+	
 	
 	// Constructor Functions
 	
