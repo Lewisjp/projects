@@ -14,10 +14,7 @@ public class Cat {
 		RobertTheBruce.setOwner("King Edward 'Longshanks'");
 		// Here we use our get method to find the value of the private variable, privateOwner 
 		System.out.println("Robert The Bruce, the cat responds to one master, " + RobertTheBruce.getOwner() + ".");		
-		
-	}
-}
-		
+			
 		
 		// Here we use the default options
 		CatTraits Gambit = new CatTraits();
